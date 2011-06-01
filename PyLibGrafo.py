@@ -43,6 +43,8 @@ class Grafo:
     def r_dfs(self,inicio,fim):
         return r_dfs(self.grafo,inicio,fim,path=[])
         
+    def tree_bfs(self,inicio,fim):
+        return tree_bfs(self.grafo,inicio,fim)
         
         
         

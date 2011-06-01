@@ -151,6 +151,16 @@ Nó Destino: Até onde for possível
     '''
     print grf.r_dfs(inicio=1,fim=-1)
 
+    print '''
+-----------------------------------------------------------
+Algoritmos de navegacão em grafos:
+Tree DFS - Gera Tree com o Deep First Search
+Nó Origem: 1
+Nó Destino: Até onde for possível
+-----------------------------------------------------------
+    '''
+    print grf.tree_bfs(inicio=1,fim=-1)
+
 if __name__ == "__main__":
     main()
     
