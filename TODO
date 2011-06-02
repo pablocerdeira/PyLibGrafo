@@ -1,0 +1,19 @@
+TODO:
+
+Recursos:
+
+- Propriedades para os nós
+    Incluir na classe Grafo a possibilidade de definir e passar propriedades
+    para os nós e para as arestas (nome, tamanho, cor etc).
+    
+    Incluir a possibilidade de escolher quais propriedades acima plotar nos 
+    grafos.
+
+
+Algoritmos:
+
+- Shortest Path
+    Incluir shortest paths e suas respectivas plotagens usando o Graph-Tools, o
+    NetworkX e o ubiGraph.
+    
+

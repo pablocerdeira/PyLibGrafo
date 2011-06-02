@@ -1,0 +1,6 @@
+Biblioteca para trabalhar com grafos em Python
+
+Trata-se, na verdade, de um facilitador para trabalhar com grafos utilizando as 
+bibliotecas mais comuns, como o Graph-Tools, o ubiGraph e o NetworkX.
+
+
