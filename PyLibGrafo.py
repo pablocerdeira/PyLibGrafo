@@ -13,6 +13,8 @@ class Grafo:
     grafo_matriz = []
     grafo_tuplas = []
     tree = {}
+    nosSet = set([])
+    props = {}
 
     def __init__(self):
         self.data = []
@@ -52,9 +54,33 @@ class Grafo:
         if engine == "ubigraph":    return plota_tree_ubi(self.tree)
         if engine == "graph-tools": return plota_tree_gt(self.tree,arquivo)
         if engine == "networkx":    return plota_tree_nx(self.tree,arquivo)
+    
+    
+    '''
+    Gera sets com todos os nós
+    '''
+    def nos(self):
+        self.nosSet = set([])
+        for noOrigem in self.grafo:
+            self.nosSet.add(noOrigem)
+            for noDestino in self.grafo[noOrigem]:
+                self.nosSet.add(noDestino)
+                
+        return self.nosSet
         
+    '''
+    Propriedades
+    '''
         
+    def adProp(self,elemento,propriedade,valor):
         
+        tmpProp = {}
+        if self.props.has_key(elemento):
+            for prop in self.props[elemento]:
+                tmpProp[prop] = self.props[elemento][prop]
+        tmpProp[propriedade] = valor
+        self.props[elemento] = tmpProp
+        return True
         
         
         
