@@ -12,6 +12,7 @@ class Grafo:
     grafo_dicionario = grafo
     grafo_matriz = []
     grafo_tuplas = []
+    tree = {}
 
     def __init__(self):
         self.data = []
@@ -44,7 +45,13 @@ class Grafo:
         return r_dfs(self.grafo,inicio,fim,path=[])
         
     def tree_bfs(self,inicio,fim):
-        return tree_bfs(self.grafo,inicio,fim)
+        self.tree = tree_bfs(self.grafo,inicio,fim)
+        return self.tree
+        
+    def plota_tree(self,engine="ubigraph",arquivo="tree.png"):
+        if engine == "ubigraph":    return plota_tree_ubi(self.tree)
+        if engine == "graph-tools": return plota_tree_gt(self.tree,arquivo)
+        if engine == "networkx":    return plota_tree_nx(self.tree,arquivo)
         
         
         

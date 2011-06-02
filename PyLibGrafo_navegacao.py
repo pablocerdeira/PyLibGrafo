@@ -59,26 +59,47 @@ def r_dfs(grafo, inicio, fim, path=[], done=False):
 
 # Gera árvore utilizando o BFS
 def tree_bfs(grafo, inicio, fim):
-    nos, path, tmpArestas = [], [], []
-    
+
     nos = grafo.keys()
     tmp = [nos[inicio]]
-    '''
+    path, pathDestino = [], []
+    arestas, tmpArestas = [], {}
     while tmp:
         noOrigem = tmp.pop(0)
         if noOrigem not in path:
-            path.append([noOrigem])
-            if noOrigem == fim:
-                return path
-            for noDestino in grafo[noOrigem]:
-                tmp = tmp + [noDestino]
-                path[-1].append(noDestino)
-                print "path", path
-                if noDestino == fim:
-                    path = path + [noDestino] 
-                    return path
-    '''
-    return path
+            path = path + [noOrigem]
+            if noOrigem != fim:
+                for noDestino in grafo[noOrigem]:
+                    tmp = tmp + [noDestino]
+                    if noDestino not in path:
+                        if noDestino not in pathDestino:
+                            if noDestino != fim:
+                                tmpArestas[noDestino] = grafo[noOrigem][noDestino]
+                                pathDestino = pathDestino + [noDestino]
+                            else:
+                                tmpArestas[noDestino] = grafo[noOrigem][noDestino]
+                                arestas.append({noOrigem:tmpArestas})
+                                return arestas
+                                break
+                arestas.append({noOrigem:tmpArestas})
+                tmpArestas = {}
+            else:
+                return arestas
+                break
+        
+    return arestas
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

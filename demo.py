@@ -39,9 +39,9 @@ Imprime o grafo:
 Demonstrando a criacão de grafos randômicos
 -----------------------------------------------------------
     '''
-    nNos = 20                                                                   # nNos: número de nós no grafo
+    nNos = 100                                                                   # nNos: número de nós no grafo
     minArestas = 1                                                              # minArestas: mínimo de arestas para cada nó
-    maxArestas = 3                                                              # maxArestas: máximo de arestas para cada nó
+    maxArestas = 5                                                              # maxArestas: máximo de arestas para cada nó
     maxPeso = 5                                                                 # maxPeso: peso máximo de cada aresta
 
     grafo = grf.random(nNos,minArestas,maxArestas,maxPeso)
@@ -160,6 +160,30 @@ Nó Destino: Até onde for possível
 -----------------------------------------------------------
     '''
     print grf.tree_bfs(inicio=1,fim=-1)
+
+    print "Output: ", grf.plota_tree("graph-tools",arquivo="treeGraph-Tools.pdf")
+    print "Output: ", grf.plota_tree("networkx",arquivo="treeTreeNetworkX.pdf")
+    print "Output: ", grf.plota_tree("ubigraph")
+
+    print '''
+-----------------------------------------------------------
+Algoritmos de navegacão em grafos:
+Tree DFS - Gera Tree com o Deep First Search
+Nó Origem: 1
+Nó Destino: 4
+-----------------------------------------------------------
+    '''
+    print grf.tree_bfs(inicio=1,fim=4)
+
+
+    print "Output: ", grf.plota_tree("graph-tools",arquivo="treeGraph-Tools2.pdf")
+    print "Output: ", grf.plota_tree("networkx",arquivo="treeTreeNetworkX2.pdf")
+    print "Output: ", grf.plota_tree("ubigraph")
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
